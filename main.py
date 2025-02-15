@@ -14,7 +14,7 @@ import analyse
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
 # Объект бота
-bot = Bot(token="7743162515:AAG_ivA6NQV1SIhXW8JQAxGPtxruiCpuC-E")
+bot = Bot(token=)
 # Диспетчер
 dp = Dispatcher()
 
