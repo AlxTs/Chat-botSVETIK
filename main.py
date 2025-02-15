@@ -41,14 +41,15 @@ async def start_questionnaire_process(message: Message, state: FSMContext):
 @dp.message(F.Voice, Form.emotion)
 async def capture_emotion(message: Message, state: FSMContext):
     async with ChatActionSender.typing(bot=bot, chat_id=message.chat.id):
-        await message.answer('Привет! Я - Светик, как у тебя настроение, Хорошее или Плохое?')
+        await message.answer('Выбери одну из этих эмоций которая точнее всего описвыает твое состояние)')
     await state.set_state(Form.mode)
 
 
 @dp.message(F.Voice, Form.mode)
 async def capture_mode(message: Message, state: FSMContext):
     async with ChatActionSender.typing(bot=bot, chat_id=message.chat.id):
-        await message.answer('Привет! Я - Светик, как у тебя настроение, Хорошее или Плохое?')
+        await message.answer('Хочешь расслабиться? Или может взбодриться? Выбери режим работы комнаты, '
+                             'успокаивающий или энергичный')
     await state.set_state(Form.mood)
 
 
